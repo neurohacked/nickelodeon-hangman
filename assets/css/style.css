@@ -1,51 +1,99 @@
-/*Basic Styles*/
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-}
+/* General */
 
 body {
-  background-image: url('../images/bg.png');
-  background-repeat: repeat;
-  color: white;
+    background-image: url('../images/bg.png');
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #fff;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
 }
-
-p {
-  text-align: center;
-  font-size: 24px;
+.wrappper {
+    width: 100%;
+    margin: 0 auto;
 }
-
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 5px 0;
+}
 h1 {
-  padding: 15px;
-  text-align: center;
-  color: white;
-  border-top: #CDB5E5 dashed 2px;
-  border-right: #CDB5E5 dashed 2px;
-  border-left: #CDB5E5 dashed 2px;
-  background: purple;
+    font-size: 2.6em;
 }
-
-.wrapper {
-  margin: 0 auto;
-  width: 100%;
+h2 {
+    font-size: 1.6em;
 }
-
-.container {
-  margin: 20px 200px;
-  box-shadow: 0 0 20px 5px rgba(118, 23, 139, 0.9)
+p {
+    font-size: 1.6em;
 }
 
 /*Game Styles*/
 
 .game {
+  margin: 0 20px;
   color: white;
   border: #CDB5E5 dashed 2px;
-  padding:15px;
+  padding:20px;
   background: rgba(0, 0, 0, 0.8);
+}
+
+/*Selected Word*/
+
+#word {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display: block;
+}
+#word li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 1.6em;
+}
+
+/*Tries Counter*/
+
+#tries {
+    font-size: 1.6em;
+    text-align: center;
+    display: block;
+}
+
+/*Classy Button*/
+
+button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -khtml-border-radius: 5px;
+    background: #ff8100;
+    color: #fff;
+    border: solid 1px #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 10px;
+    width: 150px;
+    margin: 10px;
+    outline: none;
+}
+button:hover {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    border: solid 1px #fff;
+    color: #ffa600;
+}
+
+/*Media Queries*/
+
+@media (max-width: 767px) {
+    #alphabet {
+        padding: 0 0 0 15px;
+    }
 }

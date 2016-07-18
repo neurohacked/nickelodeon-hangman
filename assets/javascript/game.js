@@ -1,76 +1,106 @@
-window.onload = function() {
+window.onload = function () {
 
-    //Variables
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'
-    ];
+  var randomWord;         // Array of words
+  var randomCategory;     // Selected category
+  var word ;              // Selected word
+  var guess ;             // User guess
+  var guesses = [ ];      // Stored guesses
+  var tries ;             // Tries
+  var counter ;           // Count correct guesses
+  var space;              // Handle spaces in words
 
-    var category; // Array of categories
-    var randomCategory; // Randomly selected category
-    var word; // Randomly selected word
-    var userGuess; // User guess
-    var geusses = []; // Stored guesses
-    var tries; // Number of tries ramaining
-    var space; // Blank spaces in word '_'
-
-    // Show Game Elements
-    var displayTries = document.querySelector("#tries");
-    var displayCategory = document.querySelector("#category");
-
-    // Select Category
-    var selectCat = function() {
-        if (randomCategory === category[0]) {
-            categoryName.innerHTML = "Category: Show";
-        } else if (randomCategory === category[1]) {
-            categoryName.innerHTML = "Category: Character";
-        }
+  // Select Category
+  function select() {
+    if (chosenCategory === randomWord[0]) {
+      categoryName.innerHTML = "Category: Show";
+    } else if (chosenCategory === randomWord[1]) {
+      categoryName.innerHTML = "Category: Character";
     }
+  }
 
-    // Word placeholder and guesses
-    function hangman() {
-        placeholder = document.querySelector("#placeholder");
-        correctGuess = document.querySelector("#correct");
+  // Create guesses ul
+   function result() {
+    placeholder = document.getElementById('blank');
+    correct = document.createElement('ul');
 
-        for (var i = 0; i < word.length; i++) {
-            correctGuess.setAttribute('id', 'game-word');
-            document.onkeyup = function(event) {
-                guess = document.createElement('li');
-                userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-                console.log('User Guess: ' + userGuess);
+    for (var i = 0; i < word.length; i++) {
+      correct.setAttribute('id', 'word');
+      guess = document.createElement('li');
+      guess.setAttribute('class', 'guess');
+      if (word[i] === " ") {
+        guess.innerHTML = " ";
+        space = 1;
+      } else {
+        guess.innerHTML = "_";
+      }
 
-                // if (userGuess matches letter(s) in a word) {
-                //   display that letter in place of placeholder;
-                // }
-                // else {
-                //   lower tries by 1;
-                // }
-                //
-                // if (all letters in a word are revealed & tries > 0) {
-                //   userWins = true;
-                // }
-                // else {
-                //   userWins = false;
-                // }
-            }
-        }
+      guesses.push(guess);
+      placeholder.appendChild(correct);
+      correct.appendChild(guess);
     }
+  }
 
-    // Play Game
-    function play() {
-        category = [
-            ["All That", "Hey Arnold", "Are You Afraid of the Dark", "Double Dare", "Invader ZIM", "Doug", "GUTS", "The Adventures of Pete and Pete"],
-            ["Doug Funny", "GIR", "Helga Pataki", "Tommy Pickles"]
+  // Show tries
+   var displayTries = document.getElementById("tries");
+   function life() {
+    displayTries.innerHTML = "You have " + tries + " tries";
+    if (tries < 1) {
+      displayTries.innerHTML = "Game Over";
+    }
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        displayTries.innerHTML = "You Win!";
+      }
+    }
+  }
+
+  // OnClick Function
+   function check(keyPressed) {
+        var guess = String.fromCharCode(keyPressed.keyCode).toLowerCase();
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === guess) {
+          guesses[i].innerHTML = guess;
+          counter += 1;
+        }
+      }
+      var j = (word.indexOf(guess));
+      if (j === -1) {
+        tries -= 1;
+        life();
+      } else {
+        life();
+      }
+       console.log(guess);
+  }
+
+
+  // Play
+  function play() {
+    randomWord = [
+        ["all that"],
+        ["all that"]
         ];
 
-        randomCategory = category[Math.floor(Math.random() * category.length)];
-        word = randomCategory[Math.floor(Math.random() * randomCategory.length)];
-        console.log(word);
+    chosenCategory = randomWord[Math.floor(Math.random() * randomWord.length)];
+    word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+    console.log(word);
 
-        selectCat();
-        hangman();
-        // tries();
+    document.onkeypress = check;
+    guesses = [ ];
+    tries = 10;
+    counter = 0;
+    space = 0;
+    result();
+    life();
+    select();
+  }
 
-    }
+  play();
+
+   // Reset
+
+  document.getElementById('reset').onclick = function() {
+    correct.parentNode.removeChild(correct);
     play();
+  }
 }
