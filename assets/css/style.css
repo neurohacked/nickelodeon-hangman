@@ -2,7 +2,6 @@
 
 body {
     background-image: url('../images/bg.png');
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color: #fff;
     height: 100%;
     text-align: center;
@@ -13,7 +12,6 @@ body {
     margin: 0 auto;
 }
 h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
     font-weight: 100;
     text-transform: uppercase;
     margin: 5px 0;
@@ -31,18 +29,17 @@ p {
 /*Game Styles*/
 
 .game {
-  margin: 0 20px;
-  color: white;
-  border: #CDB5E5 dashed 2px;
-  padding:20px;
-  background: rgba(0, 0, 0, 0.8);
+    margin: 0 20px;
+    color: white;
+    border: #CDB5E5 dashed 2px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /*Selected Word*/
 
 #word {
     margin: 0;
-    display: block;
     padding: 0;
     display: block;
 }
@@ -88,12 +85,4 @@ button:hover {
     background: #fff;
     border: solid 1px #fff;
     color: #ffa600;
-}
-
-/*Media Queries*/
-
-@media (max-width: 767px) {
-    #alphabet {
-        padding: 0 0 0 15px;
-    }
 }
