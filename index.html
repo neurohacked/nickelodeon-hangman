@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>90s Nick Hangman</title>
-    <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -13,19 +12,22 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                    <h2>90s &amp; EARLY 2000s</h2>
-                    <h2 class="nick">nickelodeon</h2>
-                    <h2>HANGMAN</h2>
+                <h1>90s &amp; EARLY 2000s</h1>
+                <h1 class="nick">nickelodeon</h1>
+                <h1>HANGMAN</h1>
             </div>
-        <div class="panel-body">
-            <p>Type a letter to guess the word. </p>
-            <p id="categoryName"></p>
-            <div id="blank" class="well">
+            <div class="panel-body">
+                <p><span class="label label-info">
+                    Type a letter A-Z to guess the word.
+                </span></p>
+                <p id="categoryName"></p>
+                <p id="tries"class="alert alert-info" role="alert">
+                </p>
+                <div id="blank" class="well">
+                </div>
+                <button id="reset" class="btn btn-lg">Play Again</button>
             </div>
-            <p id="tries"></p>
-            <button id="reset" class="btn btn-lg">Play Again</button>
         </div>
-    </div>
     </div>
     </div>
 

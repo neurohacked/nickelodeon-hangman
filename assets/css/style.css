@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "nickelodeon";
-    src: url('..assets/fonts/nickelodeon.tff') format("truetype");
+    src: url('../fonts/nickelodeon.ttf') format("truetype");
 }
 
 body {
@@ -11,16 +11,16 @@ body {
     text-align: center;
 }
 h1, h2, h3 {
-    margin-top: 5px;
+    margin-top: 4px;
 }
 h1 {
     font-size: 1.8em;
 }
 h2 {
-    font-size: 1.6em;
+    font-size: 1.5em;
 }
 p {
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 .panel {
     margin-top: 40px;
@@ -36,7 +36,11 @@ p {
 /*Word Related*/
 
 #categoryName {
-    margin: 40px 0 20px; 0
+    margin: 40px 0;
+}
+
+.well {
+    margin: 40px;
 }
 
 #word {
@@ -52,14 +56,13 @@ p {
 }
 
 #tries {
-    margin-bottom: 40px;
-    display: block;
+    margin: 20px 225px;
 }
 
 /*Classy Button*/
 
 button {
-    background: #ff8100;
+    background: #FF6820;
 }
 button:hover {
     background: #ffa600;
