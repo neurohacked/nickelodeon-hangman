@@ -1,5 +1,10 @@
 /* General */
 
+@font-face {
+    font-family: "nickelodeon";
+    src: url('..assets/fonts/nickelodeon.tff') format("truetype");
+}
+
 body {
     background-image: url('../images/bg.png');
     height: 100%;
@@ -7,13 +12,12 @@ body {
 }
 h1, h2, h3 {
     margin-top: 5px;
-    text-transform: uppercase;
 }
 h1 {
     font-size: 1.8em;
 }
 h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 p {
     font-size: 1.8em;
@@ -24,7 +28,9 @@ p {
 
 /*Title*/
 .nick {
-    max-width: 225px;
+    color: #FF6820;
+    font-size: 3.6em;
+    font-family: "nickelodeon", sans-serif;
 }
 
 /*Word Related*/
