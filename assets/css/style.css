@@ -14,16 +14,10 @@ h1, h2, h3 {
     margin-top: 4px;
 }
 h1 {
-    font-size: 1.8em;
-}
-h2 {
-    font-size: 1.5em;
-}
-p {
-    font-size: 1.6em;
+    font-size: 2em;
 }
 .panel {
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
 /*Title*/
@@ -36,6 +30,7 @@ p {
 /*Word Related*/
 
 #categoryName {
+    font-size: 1.8em;
     margin: 40px 0;
 }
 
@@ -56,14 +51,16 @@ p {
 }
 
 #tries {
-    margin: 20px 225px;
+    /*margin: 40px;*/
 }
 
 /*Classy Button*/
 
-button {
+#reset {
+    margin-bottom: 20px;
+    color: #fff;
     background: #FF6820;
 }
-button:hover {
-    background: #ffa600;
+#reset:hover {
+    background: #CE5124;
 }

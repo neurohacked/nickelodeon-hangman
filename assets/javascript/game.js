@@ -44,17 +44,18 @@ window.onload = function() {
 	var displayTries = document.getElementById("tries");
 
 	function life() {
+		displayTries.setAttribute('class', 'label label-primary');
 		displayTries.innerHTML = "You have " + tries + " tries";
 		if (tries < 1) {
-			displayTries.setAttribute('class', 'alert alert-danger');
+			displayTries.setAttribute('class', 'label label-danger');
 			displayTries.innerHTML = "Game Over";
 		}
 		else if (tries < 5) {
-			displayTries.setAttribute('class', 'alert alert-warning');
+			displayTries.setAttribute('class', 'label label-warning');
 		}
 		for (var i = 0; i < guesses.length; i++) {
 			if (counter + space === guesses.length) {
-				displayTries.setAttribute('class', 'alert alert-success');
+				displayTries.setAttribute('class', 'label label-success');
 				displayTries.innerHTML = "You Win!";
 			}
 		}
