@@ -2,87 +2,59 @@
 
 body {
     background-image: url('../images/bg.png');
-    color: #fff;
     height: 100%;
     text-align: center;
-    font-size: 18px;
-}
-.wrappper {
-    width: 100%;
-    margin: 0 auto;
 }
 h1, h2, h3 {
-    font-weight: 100;
+    margin-top: 5px;
     text-transform: uppercase;
-    margin: 5px 0;
 }
 h1 {
-    font-size: 2.6em;
+    font-size: 1.8em;
 }
 h2 {
-    font-size: 1.6em;
+    font-size: 1.8em;
 }
 p {
-    font-size: 1.6em;
+    font-size: 1.8em;
+}
+.panel {
+    margin-top: 40px;
 }
 
-/*Game Styles*/
-
-.game {
-    margin: 0 20px;
-    color: white;
-    border: #CDB5E5 dashed 2px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
+/*Title*/
+.nick {
+    max-width: 225px;
 }
 
-/*Selected Word*/
+/*Word Related*/
+
+#categoryName {
+    margin: 40px 0 20px; 0
+}
 
 #word {
     margin: 0;
-    padding: 0;
-    display: block;
+    padding: 20px;
 }
 #word li {
-    position: relative;
     list-style: none;
-    margin: 0;
     display: inline-block;
     padding: 0 10px;
-    font-size: 1.6em;
+    font-size: 1.8em;
+    font-weight: bold;
 }
 
-/*Tries Counter*/
-
 #tries {
-    font-size: 1.6em;
-    text-align: center;
+    margin-bottom: 40px;
     display: block;
 }
 
 /*Classy Button*/
 
 button {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -khtml-border-radius: 5px;
     background: #ff8100;
-    color: #fff;
-    border: solid 1px #fff;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 1em;
-    padding: 10px 10px;
-    width: 150px;
-    margin: 10px;
-    outline: none;
 }
 button:hover {
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background: #fff;
-    border: solid 1px #fff;
-    color: #ffa600;
+    background: #ffa600;
 }

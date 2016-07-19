@@ -57,10 +57,10 @@ window.onload = function() {
 
 	// Check keyPressed Function
 	function check(keyPressed) {
-		var guess = String.fromCharCode(keyPressed.keyCode).toUpperCase();
+		var guess = String.fromCharCode(keyPressed.keyCode);
 		for (var i = 0; i < word.length; i++) {
-			if (word[i] === guess) {
-				guesses[i].innerHTML = guess;
+			if (word[i] === guess.toLowerCase() || word[i] === guess.toUpperCase()) {
+				guesses[i].innerHTML = word[i];
 				counter += 1;
 			}
 		}
@@ -82,7 +82,7 @@ window.onload = function() {
 		];
 
 		chosenCategory = randomWord[Math.floor(Math.random() * randomWord.length)];
-		word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)].toUpperCase();
+		word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
 		console.log(word);
 
 		document.onkeypress = check;
