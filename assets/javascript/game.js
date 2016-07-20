@@ -82,8 +82,8 @@ window.onload = function() {
     // Play
     function play() {
         randomWord = [
-            ["All That", "Hey Arnold", "Double dare", "Invader Zim", "GUTS", "Rugrats"],
-            ["Alex Mack", "Doug Funny", "GIR", "Helga Pataki", "Tommy Pickles", "Reptar", "Ickis", "Oblina", "Krumm", "Rocko"]
+            ["All That", "Hey Arnold", "Double Dare", "Invader ZIM", "Nickelodeon Guts", "Rugrats", "Hey Dude", "SpongeBob SquarePants", "Finders Keepers", "Nick Arcade", "Weinerville", "Rocket Power"],
+            ["Alex Mack", "Doug Funnie", "Patti Mayonnaise", "GIR", "Dib", "Gaz", "Helga Pataki", "Tommy Pickles", "Chuckie Finster", "Reptar", "Ickis", "Oblina", "Krumm", "Rocko", "Heffer Wolfe" "Ren", "Stimpy", "Daggett Doofus", "Norbert Foster"]
         ];
 
         chosenCategory = randomWord[Math.floor(Math.random() * randomWord.length)];

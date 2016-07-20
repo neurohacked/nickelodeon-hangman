@@ -16,8 +16,14 @@ h1, h2, h3 {
 h1 {
     font-size: 1.6em;
 }
+hr {
+    width: 100%;
+}
 .panel {
     margin: 40px 0;
+}
+.panel-body {
+    padding: 0;
 }
 
 /*Title*/
@@ -29,9 +35,13 @@ h1 {
 
 /*Word Related*/
 
+.info {
+    margin: 15px 0;
+}
+
 #categoryName {
     font-size: 1.8em;
-    margin: 40px 0;
+    margin: 30px 0;
 }
 
 .well {
