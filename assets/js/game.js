@@ -3,8 +3,9 @@ window.onload = function() {
 	var randomWord; // Array of words
 	var randomCategory; // Selected category
 	var word; // Selected word
+	var letters = []; // Blank letters
 	var guess; // User guess
-	var letters = []; // Stored letters
+	var guesses = []; // Stored guesses
 	var tries; // Tries
 	var counter; // Count correct guesses
 	var space; // Handle spaces in words
@@ -20,7 +21,7 @@ window.onload = function() {
 
 	// Create letter blanks for word
 	function result() {
-		placeholder = document.getElementById('blank');
+		wordHolder = document.getElementById('blank');
 		correct = document.createElement('ul');
 
 		for (var i = 0; i < word.length; i++) {
@@ -35,7 +36,7 @@ window.onload = function() {
 			}
 
 			letters.push(guess);
-			placeholder.appendChild(correct);
+			wordHolder.appendChild(correct);
 			correct.appendChild(guess);
 		}
 	}
@@ -49,21 +50,20 @@ window.onload = function() {
 		if (tries < 1) {
 			displayTries.setAttribute('class', 'label label-danger');
 			displayTries.innerHTML = "Game Over";
-		}
-		else if (tries < 5) {
+		} else if (tries < 5) {
 			displayTries.setAttribute('class', 'label label-warning');
 		}
 		for (var i = 0; i < letters.length; i++) {
 			if (counter + space === letters.length) {
 				displayTries.setAttribute('class', 'label label-success');
 				displayTries.innerHTML = "You Win!";
-				win = true;
 			}
 		}
 	}
 
 	// Check keyPressed Function
 	function check(keyPressed) {
+		userGuesses = document.getElementById("guessed");
 		if (tries === 0 || counter + space === letters.length) {
 			alert('Click \'Play Again\' to start a new game.');
 			return;
@@ -82,37 +82,44 @@ window.onload = function() {
 		} else {
 			life();
 		}
-		console.log(guess);
-		console.log(tries);
+
+		guesses.push(guess);
+		userGuesses.innerHTML = 'Your Guesses: ' + guesses;
+		console.log('Guess: ' + guess);
+		console.log('Guesses: ' + guesses);
+		console.log('Tries: ' + tries);
+		console.log('Counter: ' + counter);
 	}
 
 	// Play
-    function play() {
-        randomWord = [
-            ["All That", "Hey Arnold", "Double Dare", "Invader ZIM", "Nickelodeon Guts", "Rugrats", "Hey Dude", "SpongeBob SquarePants", "Finders Keepers", "Nick Arcade", "Weinerville", "Rocket Power"],
-            ["Alex Mack", "Doug Funnie", "Patti Mayonnaise", "GIR", "Dib", "Gaz", "Helga Pataki", "Tommy Pickles", "Chuckie Finster", "Reptar", "Ickis", "Oblina", "Krumm", "Rocko", "Heffer Wolfe", "Ren", "Stimpy", "Daggett Doofus", "Norbert Foster"]
-        ];
+	function play() {
+		randomWord = [
+			["All That", "Hey Arnold", "Double Dare", "Invader ZIM", "Nickelodeon Guts", "Rugrats", "Hey Dude", "SpongeBob SquarePants", "Finders Keepers", "Nick Arcade", "Weinerville", "Rocket Power"],
+			["Alex Mack", "Doug Funnie", "Patti Mayonnaise", "GIR", "Dib", "Gaz", "Helga Pataki", "Tommy Pickles", "Chuckie Finster", "Reptar", "Ickis", "Oblina", "Krumm", "Rocko", "Heffer Wolfe", "Ren", "Stimpy", "Daggett Doofus", "Norbert Foster"]
+		];
 
-        chosenCategory = randomWord[Math.floor(Math.random() * randomWord.length)];
-        word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
-        // console.log(word);
+		chosenCategory = randomWord[Math.floor(Math.random() * randomWord.length)];
+		word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+		console.log(word);
 
-        document.onkeypress = check;
-        letters = [];
-        tries = 10;
-        counter = 0;
-        space = 0;
-        result();
-        life();
-        select();
-    }
+		document.onkeypress = check;
+		letters = [];
+		guesses = [];
+		tries = 10;
+		counter = 0;
+		space = 0;
+		result();
+		life();
+		select();
+	}
 
-    play();
+	play();
 
-    // Reset
+	// Reset
 
-    document.getElementById('reset').onclick = function() {
-        correct.parentNode.removeChild(correct);
-        play();
-    };
+	document.getElementById('reset').onclick = function() {
+		correct.parentNode.removeChild(correct);
+		userGuesses.innerHTML = '';
+		play();
+	};
 };
