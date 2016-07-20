@@ -4,7 +4,7 @@ window.onload = function() {
 	var randomCategory; // Selected category
 	var word; // Selected word
 	var guess; // User guess
-	var leetters = []; // Stored letters
+	var letters = []; // Stored letters
 	var tries; // Tries
 	var counter; // Count correct guesses
 	var space; // Handle spaces in words
@@ -57,13 +57,14 @@ window.onload = function() {
 			if (counter + space === letters.length) {
 				displayTries.setAttribute('class', 'label label-success');
 				displayTries.innerHTML = "You Win!";
+				win = true;
 			}
 		}
 	}
 
 	// Check keyPressed Function
 	function check(keyPressed) {
-		if(tries === 0) {
+		if (tries === 0 || counter + space === letters.length) {
 			alert('Click \'Play Again\' to start a new game.');
 			return;
 		}
