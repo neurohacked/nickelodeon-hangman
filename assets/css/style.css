@@ -47,6 +47,10 @@ hr {
 .well {
     margin: 40px;
 }
+#guessed {
+	padding-top: 20px;
+	font-size: 1.2em;
+}
 
 #word {
     margin: 0;
