@@ -4,9 +4,9 @@ window.onload = function() {
 	var randomCategory; // Selected category
 	var word; // Selected word
 	var guess; // User guess
-	var guesses = []; // Stored guesses
+	var letters = []; // Stored letters
 	var tries; // Tries
-	var counter; // Count correct guesses
+	var counter; // Count correct letters
 	var space; // Handle spaces in words
 
 	// Select Category
@@ -18,7 +18,7 @@ window.onload = function() {
 		}
 	}
 
-	// Create guesses ul
+	// Create letters ul
 	function result() {
 		placeholder = document.getElementById('blank');
 		correct = document.createElement('ul');
@@ -34,7 +34,7 @@ window.onload = function() {
 				guess.innerHTML = "_";
 			}
 
-			guesses.push(guess);
+			letters.push(guess);
 			placeholder.appendChild(correct);
 			correct.appendChild(guess);
 		}
@@ -53,8 +53,8 @@ window.onload = function() {
 		else if (tries < 5) {
 			displayTries.setAttribute('class', 'label label-warning');
 		}
-		for (var i = 0; i < guesses.length; i++) {
-			if (counter + space === guesses.length) {
+		for (var i = 0; i < letters.length; i++) {
+			if (counter + space === letters.length) {
 				displayTries.setAttribute('class', 'label label-success');
 				displayTries.innerHTML = "You Win!";
 			}
@@ -66,7 +66,7 @@ window.onload = function() {
 		var guess = String.fromCharCode(keyPressed.keyCode);
 		for (var i = 0; i < word.length; i++) {
 			if (word[i] === guess.toLowerCase() || word[i] === guess.toUpperCase()) {
-				guesses[i].innerHTML = word[i];
+				letters[i].innerHTML = word[i];
 				counter += 1;
 			}
 		}
@@ -92,7 +92,7 @@ window.onload = function() {
 		console.log(word);
 
 		document.onkeypress = check;
-		guesses = [];
+		letters = [];
 		tries = 10;
 		counter = 0;
 		space = 0;
