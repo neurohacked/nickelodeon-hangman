@@ -19,7 +19,7 @@ window.onload = function() {
 		}
 	}
 
-	// Create letter blanks for word
+	// Create blanks for word and handle spaces
 	function result() {
 		wordHolder = document.getElementById('blank');
 		correct = document.createElement('ul');
@@ -41,7 +41,7 @@ window.onload = function() {
 		}
 	}
 
-	// Show tries
+	// Show remaining tries for incorrect guesses
 	displayTries = document.getElementById("tries");
 
 	function life() {
@@ -61,7 +61,7 @@ window.onload = function() {
 		}
 	}
 
-	// Check keyPressed Function
+	// Check player keyPress
 	function check(keyPressed) {
 		userGuesses = document.getElementById("guessed");
 		guess = String.fromCharCode(keyPressed.keyCode);
@@ -95,7 +95,7 @@ window.onload = function() {
 		console.log('Counter: ' + counter);
 	}
 
-	// Play
+	// Play game
 	function play() {
 		randomWord = [
 			["All That", "Hey Arnold", "Double Dare", "Invader ZIM", "Nickelodeon Guts", "Rugrats", "Hey Dude", "SpongeBob SquarePants", "Finders Keepers", "Nick Arcade", "Weinerville", "Rocket Power"],
@@ -119,7 +119,7 @@ window.onload = function() {
 
 	play();
 
-	// Reset
+	// Reset game
 
 	document.getElementById('reset').onclick = function() {
 		correct.parentNode.removeChild(correct);
