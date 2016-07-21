@@ -90,9 +90,9 @@ window.onload = function() {
 
 		guesses.push(guess.toUpperCase());
 		userGuesses.innerHTML = 'Your Guesses: ' + guesses + '\u0020';
-		console.log('Guesses: ' + guesses);
-		console.log('Tries: ' + tries);
-		console.log('Counter: ' + counter);
+		// console.log('Guesses: ' + guesses);
+		// console.log('Tries: ' + tries);
+		// console.log('Counter: ' + counter);
 	}
 
 	// Play game
@@ -104,7 +104,7 @@ window.onload = function() {
 
 		chosenCategory = randomWord[Math.floor(Math.random() * randomWord.length)];
 		word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
-		console.log(word);
+		// console.log(word);
 
 		document.onkeypress = check;
 		letters = [];
